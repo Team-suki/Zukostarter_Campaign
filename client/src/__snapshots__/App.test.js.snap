@@ -1,0 +1,182 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Testing matches the snapshot 1`] = `
+<div
+  className="sc-AxmLO dyrMtd"
+>
+  <div
+    className="sc-AxheI kUKRpC"
+  >
+    <nav
+      className="sc-AxgMl bRtwyb"
+    >
+      <div
+        className="sc-Axmtr gyRQxU"
+      >
+        <a
+          className="sc-fzoLsD MBIhs"
+          href="#"
+          onClick={[Function]}
+        >
+          Story
+        </a>
+      </div>
+      <div
+        className="sc-Axmtr gyRQxU"
+      >
+        <a
+          className="sc-fzoLsD MBIhs"
+          href="#"
+          onClick={[Function]}
+        >
+          Risks And Challenges
+        </a>
+      </div>
+      <div
+        className="sc-Axmtr gyRQxU"
+      >
+        <a
+          className="sc-fzoLsD MBIhs"
+          href="#"
+          onClick={[Function]}
+        >
+          Environmental Commitments
+        </a>
+      </div>
+    </nav>
+  </div>
+  <div
+    className="sc-fzozJi dKnnmT"
+  >
+    <div
+      className="sc-fzpans hIQmrK"
+    >
+      <div>
+        <h3
+          className="sc-AxjAm gCQsTJ"
+        >
+          Story
+        </h3>
+        <div>
+          <img
+            className="sc-AxhUy dWeUmw"
+            src="http://lorempixel.com/640/480/sports"
+          />
+        </div>
+        <br />
+        <br />
+        <div>
+          <img
+            className="sc-AxhUy dWeUmw"
+          />
+        </div>
+        <br />
+        <p
+          className="sc-AxhCb brrooU"
+        />
+        <div>
+          <img
+            className="sc-AxhUy dWeUmw"
+          />
+        </div>
+        <br />
+        <p
+          className="sc-AxhCb brrooU"
+        />
+        <div>
+          <img
+            className="sc-AxhUy dWeUmw"
+          />
+        </div>
+        <br />
+        <br />
+        <p
+          className="sc-AxhCb brrooU"
+        />
+        <p
+          className="sc-AxhCb brrooU"
+        />
+        <div>
+          <img
+            className="sc-AxhUy dWeUmw"
+            src="http://lorempixel.com/640/480/sports"
+          />
+        </div>
+        <br />
+        <br />
+        <p
+          className="sc-AxhCb brrooU"
+        />
+      </div>
+    </div>
+    <div
+      className="sc-fzpans hIQmrK"
+    >
+      <div>
+        <h3
+          className="sc-AxjAm gCQsTJ"
+        >
+          Risks And Commitments
+        </h3>
+        <h4
+          className="sc-AxirZ bRBMev"
+        />
+        <p
+          className="sc-AxiKw iHrefp"
+        />
+        <p
+          className="sc-AxiKw iHrefp"
+        />
+        <h4
+          className="sc-AxirZ bRBMev"
+        />
+        <p
+          className="sc-AxiKw iHrefp"
+        />
+        <h4
+          className="sc-AxirZ bRBMev"
+        />
+        <p
+          className="sc-AxiKw iHrefp"
+        />
+        <p
+          className="sc-AxiKw iHrefp"
+        />
+      </div>
+    </div>
+    <div>
+      <div>
+        <h3
+          className="sc-AxjAm gCQsTJ"
+        >
+          Environmental Commitments
+        </h3>
+        <h4
+          className="sc-AxirZ bRBMev"
+        />
+        <p
+          className="sc-AxiKw iHrefp"
+        />
+        <h4
+          className="sc-AxirZ bRBMev"
+        />
+        <p
+          className="sc-AxiKw iHrefp"
+        />
+        <p
+          className="sc-AxiKw iHrefp"
+        />
+        <p
+          className="sc-AxiKw iHrefp"
+        />
+        <h4
+          className="sc-AxirZ bRBMev"
+        />
+        <p
+          className="sc-AxiKw iHrefp"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
