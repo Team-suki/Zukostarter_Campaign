@@ -68,6 +68,7 @@ const addStories = function(gifData, connect){
       .then(function(data){
       })
       .catch(function(err){
+        console.log('Stories', err)
       })
     }
     resolve("done")
@@ -92,6 +93,7 @@ const addRisksAndChallenges = function(connect){
       .then(function(data){
       })
       .catch(function(err){
+        console.log('Risk', err)
       })
     }
     resolve("done")
@@ -116,6 +118,7 @@ const addEnvironmentalCommitments = function(connect){
       .then(function(data){
       })
       .catch(function(err){
+        console.log('Environ', err)
       })
     }
     resolve("done");

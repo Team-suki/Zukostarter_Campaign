@@ -1,19 +1,21 @@
 const mysql = require('mysql2/promise');
 const { Sequelize, DataTypes, Model } = require('sequelize');
 
+const config = require('../../config.json');
+
 const createConnection = ()=>{
   return new Promise ((resolve, reject) =>{
     mysql.createConnection({
-      user     : "root",
-      password : ""
+      user: config.credentials.user,
+      password: config.credentials.password
     })
     .then((connection) => {
       connection.query('CREATE DATABASE IF NOT EXISTS campaign')
     })
     .then(() => {
-      const sequelize = new Sequelize('campaign', 'root', null, {
-        host: 'localhost',
-        dialect: 'mysql',
+      const sequelize = new Sequelize('campaign', config.credentials.user, config.credentials.password, {
+        host: config.credentials.host,
+        dialect: config.credentials.dialect,
         logging:false,
         pool: {
           max: 1,
@@ -100,5 +102,6 @@ const createConnection = ()=>{
     });
   })
 }
+
 
 module.exports.Connection = createConnection;

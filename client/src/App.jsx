@@ -57,9 +57,6 @@ class Campaign extends React.Component {
     }
   }
 
-  // navScroll(event){
-  //   // console.log(window.scrollY);
-  // }
 
   handleScroll(event) {
     if (
