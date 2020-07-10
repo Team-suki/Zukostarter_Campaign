@@ -1,47 +1,43 @@
-const faker = require('faker');
+const createCsvWriter = require('csv-writer').createObjectCsvWriter;
+const csvWriter = createCsvWriter({
+  path: '../example.csv',
+  header: [
+    {
+      {id: 'name', title: 'Name'},
+      {id: 'surname', title: 'Surname'},
+      {id: 'age', title: 'Age'},
+      {id: 'gender', title: 'Gender'},
 
-console.log(faker.hacker.phrase());
-var story = {
-//   gif1: ,
-//   gif2: ,
-//   gif3: ,
-//   image1: ,
-//   image2: ,
-//   image3: ,
-  title1: faker.fake('{{hacker.ingverb}} {{hacker.adjective}} {{hacker.noun}}'),
-  title2: faker.fake('{{hacker.ingverb}} {{hacker.adjective}} {{hacker.noun}}'),
-  title3: faker.fake('{{hacker.ingverb}} {{hacker.adjective}} {{hacker.noun}}'),
-  title4: faker.fake('{{hacker.ingverb}} {{hacker.adjective}} {{hacker.noun}}'),
-  title5: faker.fake('{{hacker.ingverb}} {{hacker.adjective}} {{hacker.noun}}'),
-  text1: faker.fake('{{hacker.phrase}} {{hacker.phrase}}'),
-  text2: faker.fake('{{hacker.phrase}} {{hacker.phrase}}'),
-  text3: faker.fake('{{hacker.phrase}} {{hacker.phrase}}'),
-  text4: faker.fake('{{hacker.phrase}} {{hacker.phrase}}'),
-  text5: faker.fake('{{hacker.phrase}} {{hacker.phrase}}')
-}
+    }
+  ]
+});
 
-var risk = {
-  title1: faker.hacker.noun(),
-  title2: faker.hacker.noun(),
-  title3: faker.hacker.noun(),
-  title4: faker.hacker.noun(),
-  title5: faker.hacker.noun(),
-  text1: faker.fake('{{hacker.phrase}} {{hacker.phrase}}'),
-  text2: faker.fake('{{hacker.phrase}} {{hacker.phrase}}'),
-  text3: faker.fake('{{hacker.phrase}} {{hacker.phrase}}'),
-  text4: faker.fake('{{hacker.phrase}} {{hacker.phrase}}'),
-  text5: faker.fake('{{hacker.phrase}} {{hacker.phrase}}')
-}
+const data = [
+  {
+    name: 'John',
+    surname: 'Snow',
+    age: 26,
+    gender: 'M'
+  }, {
+    name: 'Clair',
+    surname: 'White',
+    age: 33,
+    gender: 'F',
+  }, {
+    name: 'Fancy',
+    surname: 'Brown',
+    age: 78,
+    gender: 'F'
+  }
+];
 
-var commitment = {
-  title1: faker.fake('{{hacker.ingverb}} {{hacker.adjective}} {{hacker.noun}}'),
-  title2: faker.fake('{{hacker.ingverb}} {{hacker.adjective}} {{hacker.noun}}'),
-  title3: faker.fake('{{hacker.ingverb}} {{hacker.adjective}} {{hacker.noun}}'),
-  title4: faker.fake('{{hacker.ingverb}} {{hacker.adjective}} {{hacker.noun}}'),
-  title5: faker.fake('{{hacker.ingverb}} {{hacker.adjective}} {{hacker.noun}}'),
-  text1: faker.fake('{{hacker.phrase}} {{hacker.phrase}}'),
-  text2: faker.fake('{{hacker.phrase}} {{hacker.phrase}}'),
-  text3: faker.fake('{{hacker.phrase}} {{hacker.phrase}}'),
-  text4: faker.fake('{{hacker.phrase}} {{hacker.phrase}}'),
-  text5: faker.fake('{{hacker.phrase}} {{hacker.phrase}}')
-}
+csvWriter
+  .writeRecords(data)
+  .then(()=> console.log('The CSV file was written successfully'));
+
+
+// var s = Date.now();
+
+// var t = Date.now();
+
+// console.log( s);
