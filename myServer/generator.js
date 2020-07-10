@@ -2,107 +2,84 @@ const faker = require('faker');
 const random = require('random');
 
 const fs = require('fs');
-// figure out some npm to write to csv file
 
-var randomgif = [
-  'https://sdc-media-data.s3-us-west-1.amazonaws.com/giphys/giphy+(1).webp',
-  'https://sdc-media-data.s3-us-west-1.amazonaws.com/giphys/giphy+(2).webp',
-  'https://sdc-media-data.s3-us-west-1.amazonaws.com/giphys/giphy+(3).webp',
-  'https://sdc-media-data.s3-us-west-1.amazonaws.com/giphys/giphy+(4).webp',
-  'https://sdc-media-data.s3-us-west-1.amazonaws.com/giphys/giphy+(5).webp',
-  'https://sdc-media-data.s3-us-west-1.amazonaws.com/giphys/giphy+(6).webp',
-  'https://sdc-media-data.s3-us-west-1.amazonaws.com/giphys/giphy+(7).webp',
-  'https://sdc-media-data.s3-us-west-1.amazonaws.com/giphys/giphy+(8).webp',
-  'https://sdc-media-data.s3-us-west-1.amazonaws.com/giphys/giphy+(9).webp',
-  'https://sdc-media-data.s3-us-west-1.amazonaws.com/giphys/giphy+(10).webp'
-];
-var randomImg = [
-  'https://sdc-media-data.s3-us-west-1.amazonaws.com/Images/download+(1).jpg',
-  'https://sdc-media-data.s3-us-west-1.amazonaws.com/Images/download+(2).jpg',
-  'https://sdc-media-data.s3-us-west-1.amazonaws.com/Images/download+(3).jpg',
-  'https://sdc-media-data.s3-us-west-1.amazonaws.com/Images/download+(4).jpg',
-  'https://sdc-media-data.s3-us-west-1.amazonaws.com/Images/download+(5).jpg',
-  'https://sdc-media-data.s3-us-west-1.amazonaws.com/Images/download+(6).jpg',
-  'https://sdc-media-data.s3-us-west-1.amazonaws.com/Images/download+(7).jpg',
-  'https://sdc-media-data.s3-us-west-1.amazonaws.com/Images/download+(8).jpg',
-  'https://sdc-media-data.s3-us-west-1.amazonaws.com/Images/download+(9).jpg',
-  'https://sdc-media-data.s3-us-west-1.amazonaws.com/Images/download+(10).jpg',
-  'https://sdc-media-data.s3-us-west-1.amazonaws.com/Images/download+(11).jpg',
-  'https://sdc-media-data.s3-us-west-1.amazonaws.com/Images/download+(12).jpg',
-  'https://sdc-media-data.s3-us-west-1.amazonaws.com/Images/download+(13).jpg',
-  'https://sdc-media-data.s3-us-west-1.amazonaws.com/Images/download+(14).jpg',
-  'https://sdc-media-data.s3-us-west-1.amazonaws.com/Images/download+(15).jpg',
-  'https://sdc-media-data.s3-us-west-1.amazonaws.com/Images/download+(16).jpg',
-  'https://sdc-media-data.s3-us-west-1.amazonaws.com/Images/download+(17).jpg',
-  'https://sdc-media-data.s3-us-west-1.amazonaws.com/Images/download+(18).jpg',
-  'https://sdc-media-data.s3-us-west-1.amazonaws.com/Images/download+(19).jpg',
-  'https://sdc-media-data.s3-us-west-1.amazonaws.com/Images/download+(20).jpg',
-];
+// Faker + Media Asset Generator
+function generateFakeData() {
+  return {
+    gif1: `https://sdc-media-data.s3-us-west-1.amazonaws.com/giphys/giphy+(${random.int(min=1, max=10)}).webp`,
+    gif2: `https://sdc-media-data.s3-us-west-1.amazonaws.com/giphys/giphy+(${random.int(min=1, max=10)}).webp`,
+    gif3: `https://sdc-media-data.s3-us-west-1.amazonaws.com/giphys/giphy+(${random.int(min=1, max=10)}).webp`,
+    image1: `https://sdc-media-data.s3-us-west-1.amazonaws.com/Images/download+(${random.int(min=1, max=20)}).jpg`,
+    image2: `https://sdc-media-data.s3-us-west-1.amazonaws.com/Images/download+(${random.int(min=1, max=20)}).jpg`,
+    image3: `https://sdc-media-data.s3-us-west-1.amazonaws.com/Images/download+(${random.int(min=1, max=20)}).jpg`,
+    storyTitle1: faker.fake('{{hacker.ingverb}} {{hacker.noun}}'),
+    storyTitle2: faker.fake('{{hacker.ingverb}} {{hacker.noun}}'),
+    storyTitle3: faker.fake('{{hacker.ingverb}} {{hacker.noun}}'),
+    storyTitle4: faker.fake('{{hacker.ingverb}} {{hacker.noun}}'),
+    storyTitle5: faker.fake('{{hacker.ingverb}} {{hacker.noun}}'),
+    storyText1: faker.fake('{{hacker.phrase}} {{hacker.phrase}}'),
+    storyText2: faker.fake('{{hacker.phrase}} {{hacker.phrase}}'),
+    storyText3: faker.fake('{{hacker.phrase}} {{hacker.phrase}}'),
+    storyText4: faker.fake('{{hacker.phrase}} {{hacker.phrase}}'),
+    storyText5: faker.fake('{{hacker.phrase}} {{hacker.phrase}}'),
 
-let startTime = Date.now();
+    riskTitle1: faker.hacker.noun(),
+    riskTitle2: faker.hacker.noun(),
+    riskTitle3: faker.hacker.noun(),
+    riskTitle4: faker.hacker.noun(),
+    riskTitle5: faker.hacker.noun(),
+    riskText1: faker.fake('{{hacker.phrase}} {{hacker.phrase}}'),
+    riskText2: faker.fake('{{hacker.phrase}} {{hacker.phrase}}'),
+    riskText3: faker.fake('{{hacker.phrase}} {{hacker.phrase}}'),
+    riskText4: faker.fake('{{hacker.phrase}} {{hacker.phrase}}'),
+    riskText5: faker.fake('{{hacker.phrase}} {{hacker.phrase}}'),
 
+    commitTitle1: faker.fake('{{hacker.ingverb}} {{hacker.noun}}'),
+    commitTitle2: faker.fake('{{hacker.ingverb}} {{hacker.noun}}'),
+    commitTitle3: faker.fake('{{hacker.ingverb}} {{hacker.noun}}'),
+    commitTitle4: faker.fake('{{hacker.ingverb}} {{hacker.noun}}'),
+    commitTitle5: faker.fake('{{hacker.ingverb}} {{hacker.noun}}'),
+    commitText1: faker.fake('{{hacker.phrase}} {{hacker.phrase}}'),
+    commitText2: faker.fake('{{hacker.phrase}} {{hacker.phrase}}'),
+    commitText3: faker.fake('{{hacker.phrase}} {{hacker.phrase}}'),
+    commitText4: faker.fake('{{hacker.phrase}} {{hacker.phrase}}'),
+    commitText5: faker.fake('{{hacker.phrase}} {{hacker.phrase}}')
+  }
+}
+
+
+// WriteStream
 let writeStream = fs.createWriteStream('../example.csv')
   .on('error', (err) => { console.log('error occured:', err)});
 
+// Start Timer
+let startTime = Date.now();
 
-var tenMil = 10000000;
-for (let i = 0; i < tenMil; i++) {
-  var data = {
-    story: {
-        gif1: randomgif[random.int(min=0, max=randomgif.length - 1)],
-        gif2: randomgif[random.int(min=0, max=randomgif.length - 1)],
-        gif3: randomgif[random.int(min=0, max=randomgif.length - 1)],
-        image1: randomImg[random.int(min=0, max=randomImg.length - 1)],
-        image2: randomImg[random.int(min=0, max=randomImg.length - 1)],
-        image3: randomImg[random.int(min=0, max=randomImg.length - 1)],
-        title1: faker.fake('{{hacker.ingverb}} {{hacker.noun}}'),
-        title2: faker.fake('{{hacker.ingverb}} {{hacker.noun}}'),
-        title3: faker.fake('{{hacker.ingverb}} {{hacker.noun}}'),
-        title4: faker.fake('{{hacker.ingverb}} {{hacker.noun}}'),
-        title5: faker.fake('{{hacker.ingverb}} {{hacker.noun}}'),
-        text1: faker.fake('{{hacker.phrase}} {{hacker.phrase}}'),
-        text2: faker.fake('{{hacker.phrase}} {{hacker.phrase}}'),
-        text3: faker.fake('{{hacker.phrase}} {{hacker.phrase}}'),
-        text4: faker.fake('{{hacker.phrase}} {{hacker.phrase}}'),
-        text5: faker.fake('{{hacker.phrase}} {{hacker.phrase}}')
-      },
-    risks: {
-      title1: faker.hacker.noun(),
-      title2: faker.hacker.noun(),
-      title3: faker.hacker.noun(),
-      text1: faker.fake('{{hacker.phrase}} {{hacker.phrase}}'),
-      text2: faker.fake('{{hacker.phrase}} {{hacker.phrase}}'),
-      text3: faker.fake('{{hacker.phrase}} {{hacker.phrase}}')
-    },
-    commitment: {
-      title1: faker.fake('{{hacker.ingverb}} {{hacker.noun}}'),
-      title2: faker.fake('{{hacker.ingverb}} {{hacker.noun}}'),
-      title3: faker.fake('{{hacker.ingverb}} {{hacker.noun}}'),
-      text1: faker.fake('{{hacker.phrase}} {{hacker.phrase}}'),
-      text2: faker.fake('{{hacker.phrase}} {{hacker.phrase}}'),
-      text3: faker.fake('{{hacker.phrase}} {{hacker.phrase}}')
-    }
+var itemsLeft = 3; // 10,000,000
+
+function writeToCSV() {
+  let keepWriting = true;
+
+  // while item is less than itemsLeft and writeStream.write(data, 'utf8')
+  while (keepWriting && 0 < itemsLeft) {
+    keepWriting = writeStream.write(JSON.stringify(generateFakeData()) + '\n', 'utf8');
+    itemsLeft--;
   }
 
-  if (i === 0) {
-    data = "[" + JSON.stringify(data) + ",";
-  } else if (i === tenMil - 1) {
-    data = JSON.stringify(data) + "]";
+  // exit while loop when keepWriting = false;
+  // if itemsLeft > 0
+  if (itemsLeft > 0) {
+    // drain so that it can keep writing
+    writeStream.once('drain', writeToCSV);
   } else {
-    data = JSON.stringify(data) + ",";
+    // otherwise end it
+    writeStream.end();
+    let endTime = Date.now();
+    console.log(`Time consumed: ${endTime - startTime} ms`)
   }
-
-  writeStream.write(JSON.stringify(data));
 }
 
-writeStream.end();
+writeToCSV();
 
-let endTime = Date.now();
-console.log('start:', startTime);
-console.log('end:', endTime)
-console.log(endTime - startTime)
-
-  // accumulate the data
-  // use the csv file writer npm to write to file
 
 
