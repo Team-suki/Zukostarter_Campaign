@@ -79,7 +79,7 @@ let writeStream = fs.createWriteStream('../trial.csv')
 let startTime = Date.now();
 
 var item = 0;
-var itemsLeft = 1; // 10000000
+var itemsLeft = 3; // 10000000
 var headers = [
   'id', 'gif1', 'gif2', 'gif3', 'image1', 'image2', 'image3',
   'storyT1', 'storyT2', 'storyT3', 'storyT4', 'storyT5', 'storyText1', 'storyText2', 'storyText3', 'storyText4', 'storyText5',
