@@ -25,3 +25,6 @@ build/
 bundle.js
 
 config.json
+
+data.csv
+example.csv
