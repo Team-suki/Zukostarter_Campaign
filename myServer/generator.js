@@ -19,33 +19,33 @@ function generateFakeData(itemID) {
     storyT3: faker.fake('{{hacker.ingverb}} {{hacker.noun}}'),
     storyT4: faker.fake('{{hacker.ingverb}} {{hacker.noun}}'),
     storyT5: faker.fake('{{hacker.ingverb}} {{hacker.noun}}'),
-    storyText1: faker.hacker.phrase(),
-    storyText2: faker.hacker.phrase(),
-    storyText3: faker.hacker.phrase(),
-    storyText4: faker.hacker.phrase(),
-    storyText5: faker.hacker.phrase(),
+    storyText1: faker.lorem.paragraph(),
+    storyText2: faker.lorem.paragraph(),
+    storyText3: faker.lorem.paragraph(),
+    storyText4: faker.lorem.paragraph(),
+    storyText5: faker.lorem.paragraph(),
 
     riskT1: faker.hacker.noun(),
     riskT2: faker.hacker.noun(),
     riskT3: faker.hacker.noun(),
     riskT4: faker.hacker.noun(),
     riskT5: faker.hacker.noun(),
-    riskText1: faker.hacker.phrase(),
-    riskText2: faker.hacker.phrase(),
-    riskText3: faker.hacker.phrase(),
-    riskText4: faker.hacker.phrase(),
-    riskText5: faker.hacker.phrase(),
+    riskText1: faker.lorem.paragraph(),
+    riskText2: faker.lorem.paragraph(),
+    riskText3: faker.lorem.paragraph(),
+    riskText4: faker.lorem.paragraph(),
+    riskText5: faker.lorem.paragraph(),
 
     commitT1: faker.fake('{{hacker.ingverb}} {{hacker.noun}}'),
     commitT2: faker.fake('{{hacker.ingverb}} {{hacker.noun}}'),
     commitT3: faker.fake('{{hacker.ingverb}} {{hacker.noun}}'),
     commitT4: faker.fake('{{hacker.ingverb}} {{hacker.noun}}'),
     commitT5: faker.fake('{{hacker.ingverb}} {{hacker.noun}}'),
-    commitText1: faker.hacker.phrase(),
-    commitText2: faker.hacker.phrase(),
-    commitText3: faker.hacker.phrase(),
-    commitText4: faker.hacker.phrase(),
-    commitText5: faker.hacker.phrase(),
+    commitText1: faker.lorem.paragraph(),
+    commitText2: faker.lorem.paragraph(),
+    commitText3: faker.lorem.paragraph(),
+    commitText4: faker.lorem.paragraph(),
+    commitText5: faker.lorem.paragraph(),
   }
 }
 
@@ -71,7 +71,7 @@ function csvFormat(data) {
 }
 
 // WriteStream
-let writeStream = fs.createWriteStream('../data.csv')
+let writeStream = fs.createWriteStream('../trial.csv')
   .on('finsh', () => console.log('Finished'))
   .on('error', (err) => { console.log('error occured:', err)});
 
@@ -79,7 +79,7 @@ let writeStream = fs.createWriteStream('../data.csv')
 let startTime = Date.now();
 
 var item = 0;
-var itemsLeft = 10000000; // 10000000
+var itemsLeft = 1; // 10000000
 var headers = [
   'id', 'gif1', 'gif2', 'gif3', 'image1', 'image2', 'image3',
   'storyT1', 'storyT2', 'storyT3', 'storyT4', 'storyT5', 'storyText1', 'storyText2', 'storyText3', 'storyText4', 'storyText5',
