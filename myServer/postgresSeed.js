@@ -22,15 +22,9 @@ let queryCommand = "INSERT INTO story ( gif1, gif2, gif3, image1, image2, image3
 
 let data = [];
 csvParse.parseStream(readStream)
-  .on('error', (err) => {
-      console.log(err);
-  })
   .on('data', function(rowOfData) {
     data.push(rowOfData);
-    client.query(queryCommand, [data], (err, res) => {
-      if (err) console.log(err);
     })
-  })
   .on('end', function() {
     console.log(data);
     console.log('Seeding Sucessful!');
