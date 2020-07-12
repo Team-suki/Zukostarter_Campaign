@@ -16,19 +16,25 @@ client.connect();
 //     client.end();
 // })
 
-let headers = [];
 
-var s = 1;
-csvParse
-  .parseStream(readStream, {headers: true})
-  .on('data', function(dataRaw) {
-    client.query('Insert ')
-    headers.push(dataRaw.commitT1);
-    s++;
+let tableName = 'story';
+let queryCommand = "INSERT INTO story ( gif1, gif2, gif3, image1, image2, image3, storyt1, storyt2, storyt3, storyt4, storyt5, storytext1, storytext2, storytext3, storytext4, storytext5 ) VALUES (?";
+
+let data = [];
+csvParse.parseStream(readStream)
+  .on('error', (err) => {
+      console.log(err);
+  })
+  .on('data', function(rowOfData) {
+    data.push(rowOfData);
+    client.query(queryCommand, [data], (err, res) => {
+      if (err) console.log(err);
+    })
   })
   .on('end', function() {
+    console.log(data);
     console.log('Seeding Sucessful!');
-    client.end();
-  })
+    })
+
 
 
