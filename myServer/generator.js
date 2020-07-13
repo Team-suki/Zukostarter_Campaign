@@ -11,18 +11,18 @@ var storyHeaders = [
 
 var riskHeaders = ['riskT1', 'riskT2', 'riskT3', 'riskT4', 'riskT5', 'riskText1', 'riskText2', 'riskText3', 'riskText4', 'riskText5'];
 
-var challHeaders = ['commitT1', 'commitT2', 'commitT3', 'commitT4', 'commitT5', 'commitText1', 'commitText2', 'commitText3', 'commitText4', 'commitText5'];
+var commitHeaders = ['commitT1', 'commitT2', 'commitT3', 'commitT4', 'commitT5', 'commitText1', 'commitText2', 'commitText3', 'commitText4', 'commitText5'];
 
 function csvFormat(data) {
-  return storyHeaders.reduce((acc, header, index) => {
+  return commitHeaders.reduce((acc, header, index) => {
     if (item === 0) {
-      if (index === storyHeaders.length - 1) {
+      if (index === commitHeaders.length - 1) {
         acc += header;
       } else {
         acc += header + ',';
       }
     } else {
-      if (index === storyHeaders.length - 1) {
+      if (index === commitHeaders.length - 1) {
         acc += data[header];
       } else {
         acc += data[header] + ',';
@@ -36,7 +36,7 @@ function csvFormat(data) {
 
 
 // WriteStream
-let writeStream = fs.createWriteStream('../story.csv')
+let writeStream = fs.createWriteStream('../commit.csv')
   .on('finsh', () => console.log('Finished'))
   .on('error', (err) => { console.log('error occured:', err)});
 
@@ -51,7 +51,7 @@ function writeToCSV() {
 
   // while item is less than itemsLeft and writeStream.write(data, 'utf8')
   while (keepWriting && item <= itemsLeft) {
-    keepWriting = writeStream.write(csvFormat(machine.generateStoryData(item)) + '\n', 'utf8');
+    keepWriting = writeStream.write(csvFormat(machine.generateCommitData(item)) + '\n', 'utf8');
     item++;
   }
 

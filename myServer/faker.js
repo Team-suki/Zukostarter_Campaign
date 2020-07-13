@@ -38,7 +38,7 @@ module.exports = {
     }
   },
 
-  generateChallData: () => {
+  generateCommitData: () => {
     return {
       commitT1: faker.fake('{{hacker.ingverb}} {{hacker.noun}}'),
       commitT2: faker.fake('{{hacker.ingverb}} {{hacker.noun}}'),

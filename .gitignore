@@ -27,4 +27,9 @@ bundle.js
 config.json
 
 data.csv
-example.csv
+story.csv
+risk.csv
+commit.csv
+
+postgres.json
+reference.js
