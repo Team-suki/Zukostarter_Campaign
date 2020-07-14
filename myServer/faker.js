@@ -2,8 +2,9 @@ const faker = require('faker');
 const random = require('random');
 
 module.exports = {
-  generateStoryData: () => {
+  generateStoryData: (itemID) => {
     return {
+      id: itemID,
       gif1: `https://sdc-media-data.s3-us-west-1.amazonaws.com/giphys/giphy+(${random.int(min=1, max=10)}).webp`,
       gif2: `https://sdc-media-data.s3-us-west-1.amazonaws.com/giphys/giphy+(${random.int(min=1, max=10)}).webp`,
       gif3: `https://sdc-media-data.s3-us-west-1.amazonaws.com/giphys/giphy+(${random.int(min=1, max=10)}).webp`,
@@ -23,8 +24,9 @@ module.exports = {
     }
   },
 
-  generateRiskData: () => {
+  generateRiskData: (itemID) => {
     return {
+      id: itemID,
       riskT1: faker.hacker.noun(),
       riskT2: faker.hacker.noun(),
       riskT3: faker.hacker.noun(),
@@ -38,8 +40,9 @@ module.exports = {
     }
   },
 
-  generateCommitData: () => {
+  generateCommitData: (itemID) => {
     return {
+      id: itemID,
       commitT1: faker.fake('{{hacker.ingverb}} {{hacker.noun}}'),
       commitT2: faker.fake('{{hacker.ingverb}} {{hacker.noun}}'),
       commitT3: faker.fake('{{hacker.ingverb}} {{hacker.noun}}'),

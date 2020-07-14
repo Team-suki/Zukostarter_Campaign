@@ -4,25 +4,26 @@ const machine = require("./faker.js");
 
 
 
+
 var storyHeaders = [
-  'gif1', 'gif2', 'gif3', 'image1', 'image2', 'image3',
+  'id', 'gif1', 'gif2', 'gif3', 'image1', 'image2', 'image3',
   'storyT1', 'storyT2', 'storyT3', 'storyT4', 'storyT5', 'storyText1', 'storyText2', 'storyText3', 'storyText4', 'storyText5'
 ];
 
-var riskHeaders = ['riskT1', 'riskT2', 'riskT3', 'riskT4', 'riskT5', 'riskText1', 'riskText2', 'riskText3', 'riskText4', 'riskText5'];
+var riskHeaders = ['id', 'riskT1', 'riskT2', 'riskT3', 'riskT4', 'riskT5', 'riskText1', 'riskText2', 'riskText3', 'riskText4', 'riskText5'];
 
-var commitHeaders = ['commitT1', 'commitT2', 'commitT3', 'commitT4', 'commitT5', 'commitText1', 'commitText2', 'commitText3', 'commitText4', 'commitText5'];
+var commitHeaders = ['id', 'commitT1', 'commitT2', 'commitT3', 'commitT4', 'commitT5', 'commitText1', 'commitText2', 'commitText3', 'commitText4', 'commitText5'];
 
 function csvFormat(data) {
-  return commitHeaders.reduce((acc, header, index) => {
+  return storyHeaders.reduce((acc, header, index) => {           // change
     if (item === 0) {
-      if (index === commitHeaders.length - 1) {
+      if (index === storyHeaders.length - 1) {
         acc += header;
       } else {
         acc += header + ',';
       }
     } else {
-      if (index === commitHeaders.length - 1) {
+      if (index === storyHeaders.length - 1) {
         acc += data[header];
       } else {
         acc += data[header] + ',';
@@ -36,7 +37,7 @@ function csvFormat(data) {
 
 
 // WriteStream
-let writeStream = fs.createWriteStream('../commit.csv')
+let writeStream = fs.createWriteStream('../storyCass.csv')                 // change
   .on('finsh', () => console.log('Finished'))
   .on('error', (err) => { console.log('error occured:', err)});
 
@@ -51,7 +52,7 @@ function writeToCSV() {
 
   // while item is less than itemsLeft and writeStream.write(data, 'utf8')
   while (keepWriting && item <= itemsLeft) {
-    keepWriting = writeStream.write(csvFormat(machine.generateCommitData(item)) + '\n', 'utf8');
+    keepWriting = writeStream.write(csvFormat(machine.generateStoryData(item)) + '\n', 'utf8');      // change
     item++;
   }
 
@@ -69,6 +70,5 @@ function writeToCSV() {
 }
 
 writeToCSV();
-
 
 
