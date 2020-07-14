@@ -48,6 +48,7 @@
     "@babel/plugin-transform-runtime": "^7.10.3",
     "babel-plugin-styled-components": "^1.10.7",
     "babel-plugin-transform-runtime": "^6.23.0",
+    "cli-progress": "^3.8.2",
     "csv-writer": "^1.6.0",
     "d3-fetch": "^1.2.0",
     "enzyme": "^3.11.0",

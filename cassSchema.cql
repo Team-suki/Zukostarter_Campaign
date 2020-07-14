@@ -3,49 +3,49 @@ DROP TABLE IF EXISTS RisksAndChallenges;
 DROP TABLE IF EXISTS Commitments;
 
 CREATE TABLE Story(
-  id SERIAL PRIMARY KEY,
-  gif1 varchar(150) NOT NULL,
-  gif2 varchar(150) NOT NULL,
-  gif3 varchar(150) NOT NULL,
-  image1 varchar(150) NOT NULL,
-  image2 varchar(150) NOT NULL,
-  image3 varchar(150) NOT NULL,
-  storyT1 character varying(40) NOT NULL,
-  storyT2 character varying(40) NOT NULL,
-  storyT3 character varying(40) NOT NULL,
-  storyT4 character varying(40) NOT NULL,
-  storyT5 character varying(40) NOT NULL,
-  storyText1 character varying(500) NOT NULL,
-  storyText2 character varying(500) NOT NULL,
-  storyText3 character varying(500) NOT NULL,
-  storyText4 character varying(500) NOT NULL,
-  storyText5 character varying(500) NOT NULL
+  id int PRIMARY KEY,
+  gif1 varchar,
+  gif2 varchar,
+  gif3 varchar,
+  image1 varchar,
+  image2 varchar,
+  image3 varchar,
+  storyT1 varchar,
+  storyT2 varchar,
+  storyT3 varchar,
+  storyT4 varchar,
+  storyT5 varchar,
+  storyText1 varchar,
+  storyText2 varchar,
+  storyText3 varchar,
+  storyText4 varchar,
+  storyText5 varchar
 );
 
 CREATE TABLE RisksAndChallenges(
-  id SERIAL PRIMARY KEY,
-  riskT1 character varying(40) NOT NULL,
-  riskT2 character varying(40) NOT NULL,
-  riskT3 character varying(40) NOT NULL,
-  riskT4 character varying(40) NOT NULL,
-  riskT5 character varying(40) NOT NULL,
-  riskText1 character varying(500) NOT NULL,
-  riskText2 character varying(500) NOT NULL,
-  riskText3 character varying(500) NOT NULL,
-  riskText4 character varying(500) NOT NULL,
-  riskText5 character varying(500) NOT NULL
+  id int PRIMARY KEY,
+  riskT1 varchar,
+  riskT2 varchar,
+  riskT3 varchar,
+  riskT4 varchar,
+  riskT5 varchar,
+  riskText1 varchar,
+  riskText2 varchar,
+  riskText3 varchar,
+  riskText4 varchar,
+  riskText5 varchar
 );
 
 CREATE TABLE Commitments(
-  id SERIAL PRIMARY KEY,
-  commitT1 character varying(40) NOT NULL,
-  commitT2 character varying(40) NOT NULL,
-  commitT3 character varying(40) NOT NULL,
-  commitT4 character varying(40) NOT NULL,
-  commitT5 character varying(40) NOT NULL,
-  commitText1 character varying(500) NOT NULL,
-  commitText2 character varying(500) NOT NULL,
-  commitText3 character varying(500) NOT NULL,
-  commitText4 character varying(500) NOT NULL,
-  commitText5 character varying(500) NOT NULL
+  id int PRIMARY KEY,
+  commitT1 varchar,
+  commitT2 varchar,
+  commitT3 varchar,
+  commitT4 varchar,
+  commitT5 varchar,
+  commitText1 varchar,
+  commitText2 varchar,
+  commitText3 varchar,
+  commitText4 varchar,
+  commitText5 varchar
 );
