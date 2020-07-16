@@ -12,14 +12,14 @@ class RisksAndChallenges extends React.Component {
     return(
       <div>
         <TitleH3>Risks And Commitments</TitleH3>
-        <TitleH4>{this.props.data.title1}</TitleH4>
-        <TextP>{this.props.data.text1}</TextP>
-        <TextP>{this.props.data.text2}</TextP>
-        <TitleH4>{this.props.data.title3}</TitleH4>
-        <TextP>{this.props.data.text3}</TextP>
-        <TitleH4>{this.props.data.title4}</TitleH4>
-        <TextP>{this.props.data.text4}</TextP>
-        <TextP>{this.props.data.text5}</TextP>
+        <TitleH4>{this.props.data.risktitle1}</TitleH4>
+        <TextP>{this.props.data.risktext1}</TextP>
+        <TextP>{this.props.data.risktext2}</TextP>
+        <TitleH4>{this.props.data.risktitle3}</TitleH4>
+        <TextP>{this.props.data.risktext3}</TextP>
+        <TitleH4>{this.props.data.risktitle4}</TitleH4>
+        <TextP>{this.props.data.risktext4}</TextP>
+        <TextP>{this.props.data.risktext5}</TextP>
       </div>
     )
   }

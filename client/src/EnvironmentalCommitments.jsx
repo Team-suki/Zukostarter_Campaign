@@ -12,14 +12,14 @@ class EnvironmentalCommitments extends React.Component {
     return(
       <div>
         <TitleH3>Environmental Commitments</TitleH3>
-        <TitleH4>{this.props.data.title1}</TitleH4>
-        <TextP>{this.props.data.text1}</TextP>
-        <TitleH4>{this.props.data.title2}</TitleH4>
-        <TextP>{this.props.data.text2}</TextP>
-        <TextP>{this.props.data.text3}</TextP>
-        <TextP>{this.props.data.text4}</TextP>
-        <TitleH4>{this.props.data.title5}</TitleH4>
-        <TextP>{this.props.data.text5}</TextP>
+        <TitleH4>{this.props.data.committitle1}</TitleH4>
+        <TextP>{this.props.data.committext1}</TextP>
+        <TitleH4>{this.props.data.committitle2}</TitleH4>
+        <TextP>{this.props.data.committext2}</TextP>
+        <TextP>{this.props.data.committext3}</TextP>
+        <TextP>{this.props.data.committext4}</TextP>
+        <TitleH4>{this.props.data.committitle5}</TitleH4>
+        <TextP>{this.props.data.committext5}</TextP>
       </div>
     )
   }
