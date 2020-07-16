@@ -1,8 +1,6 @@
 const express = require('express')
 const morgan = require('morgan')
 
-const controller = require('./myServer/controller.js');
-
 const path = require('path');
 const cors = require('cors')
 
@@ -22,18 +20,21 @@ app.get('/:id', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
 });
 
-// ======= STORY ========
 
-// GET One Story
+// GET ID Specified Story
 app.get('/api/story/:id', function (req, res){
-  var queryCMD = `SELECT * from story where id=${req.params.id + 1}`;
+  var id = req.params.id + 1 || 2;
+  var queryCMD = `SELECT * from story where id=${id}`;
   db.query(queryCMD, (err, result) => {
     if (err) throw err;
     res.status(200).send(result.rows[0]);
   });
 });
 
+
+// GET ID Specified Risk
 app.get('/api/risksandchallenges/:id', function (req, res){
+  var id = req.params.id + 1 || 2;
   var queryCMD = `SELECT * from risksandchallenges where id=${req.params.id + 1}`;
   db.query(queryCMD, (err, result) => {
     if (err) throw err;
@@ -41,7 +42,9 @@ app.get('/api/risksandchallenges/:id', function (req, res){
   });
 });
 
+// GET ID Specified Commit
 app.get('/api/environmentalcommitments/:id', function (req, res){
+  var id = req.params.id + 1 || 2;
   var queryCMD = `SELECT * from commitments where id=${req.params.id + 1}`;
   db.query(queryCMD, (err, result) => {
     if (err) throw err;
