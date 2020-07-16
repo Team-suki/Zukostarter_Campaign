@@ -5,7 +5,7 @@ const connectionString = `postgressql://${dbCreds.username}:${dbCreds.pwd}@local
 
 const postgre = new Client({ connectionString });
 
-// postgre.connect();
+postgre.connect();
 
 // postgre.query('SELECT * from commitments where id=2', (err, res) => {
 //   console.log(res.rows[0]);

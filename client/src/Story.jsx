@@ -12,6 +12,7 @@ class Story extends React.Component {
   }
 
   render(){
+    console.log(this.props.data);
     return(
       <div>
         <TitleH3>Story</TitleH3>
@@ -22,10 +23,10 @@ class Story extends React.Component {
         <div><Gif src = {this.props.data.gif2} ></Gif></div><br></br>
         <StoryP>{this.props.data.text3}</StoryP>
         <div><Gif src = {this.props.data.gif3} ></Gif></div><br></br><br></br>
-        <StoryP>{this.props.data.title4}</StoryP>
-        <StoryP>{this.props.data.text4}</StoryP>
+        <StoryP>{this.props.data.storyt4}</StoryP>
+        <StoryP>{this.props.data.storytext4}</StoryP>
         <div><Gif src = {"http://lorempixel.com/640/480/sports"}  ></Gif></div><br></br><br></br>
-        <StoryP>{this.props.data.text5}</StoryP>
+        <StoryP>{this.props.data.storytext5}</StoryP>
       </div>
     )
   }
