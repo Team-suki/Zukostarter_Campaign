@@ -6,16 +6,16 @@ const config = require('../../config.json');
 const createConnection = ()=>{
   return new Promise ((resolve, reject) =>{
     mysql.createConnection({
-      user: config.credentials.user,
-      password: config.credentials.password
+      user: config.user,
+      password: config.password
     })
     .then((connection) => {
       connection.query('CREATE DATABASE IF NOT EXISTS campaign')
     })
     .then(() => {
-      const sequelize = new Sequelize('campaign', config.credentials.user, config.credentials.password, {
-        host: config.credentials.host,
-        dialect: config.credentials.dialect,
+      const sequelize = new Sequelize('campaign', config.user, config.password, {
+        host: config.host,
+        dialect: config.dialect,
         logging:false,
         pool: {
           max: 1,

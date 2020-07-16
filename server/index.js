@@ -1,7 +1,9 @@
 const express = require('express')
 const morgan = require('morgan')
-const db = require('./model/database.js')
-const controller = require('./controller/controller.js')
+
+const controller = require('./controller/controller.js');
+// const controller = require('./myServer/controller.js');
+
 const path = require('path');
 const cors = require('cors')
 
