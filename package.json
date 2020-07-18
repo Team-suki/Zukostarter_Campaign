@@ -56,6 +56,7 @@
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
     "fetch": "^1.1.0",
     "file-system": "^2.2.2",
+    "newrelic": "^6.11.0",
     "nodemon": "^2.0.4"
   }
 }
