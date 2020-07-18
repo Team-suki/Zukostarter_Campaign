@@ -96,7 +96,8 @@ class Campaign extends React.Component {
 
   fetchStory(){
     let idx = this.getParams()
-    if (idx === "/") idx = 1;
+    console.log(idx);
+    if (idx === "/") idx = 2;
     axios({
       method: 'get',
       url: '/api/story/' + idx,
@@ -113,7 +114,7 @@ class Campaign extends React.Component {
 
   fetchRisksAndChallenges(){
     let idx = this.getParams()
-    if (idx === "/") idx = 1;
+    if (idx === "/") idx = 2;
     axios({
       method: 'get',
       url: '/api/RisksAndChallenges/'+idx,
@@ -130,7 +131,7 @@ class Campaign extends React.Component {
 
   fetchEnvironmentalChallenges(){
     let idx = this.getParams()
-    if (idx === "/") idx = 1;
+    if (idx === "/") idx = 2;
     axios({
       method: 'get',
       url: '/api/EnvironmentalCommitments/'+idx,
