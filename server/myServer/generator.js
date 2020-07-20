@@ -54,7 +54,8 @@ function writeToCSV() {
   while (keepWriting && item <= itemsLeft) {
     keepWriting = writeStream.write(csvFormat(machine.generateStoryData(item)) + '\n', 'utf8');      // change
     item++;
-  }
+  } // generateRiskData generateCommitData
+
 
   // exit while loop when keepWriting = false;
   // if itemsLeft > 0
