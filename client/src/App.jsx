@@ -90,17 +90,16 @@ class Campaign extends React.Component {
 
   getParams () {
     const currentAddress = window.location.href;
-    let url = currentAddress.split('')
+    let url = currentAddress.split('/')
     return url[url.length-1]
   };
 
   fetchStory(){
     let idx = this.getParams()
-    console.log(idx);
-    if (idx === "/") idx = 2;
+    if (idx === "") idx = 2;
     axios({
       method: 'get',
-      url: '/api/story/' + idx,
+      url: '/api/Story/' + idx,
     })
     .then((response)=>{
       this.setState({

@@ -12,7 +12,6 @@ class Story extends React.Component {
   }
 
   render(){
-    console.log(this.props.data);
     return(
       <div>
         <TitleH3>Story</TitleH3>
