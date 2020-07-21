@@ -6,13 +6,13 @@ const machine = require("./faker.js");
 
 
 var storyHeaders = [
-  'id', 'gif1', 'gif2', 'gif3', 'image1', 'image2', 'image3',
+  'gif1', 'gif2', 'gif3', 'image1', 'image2', 'image3',
   'storyT1', 'storyT2', 'storyT3', 'storyT4', 'storyT5', 'storyText1', 'storyText2', 'storyText3', 'storyText4', 'storyText5'
 ];
 
-var riskHeaders = ['id', 'riskT1', 'riskT2', 'riskT3', 'riskT4', 'riskT5', 'riskText1', 'riskText2', 'riskText3', 'riskText4', 'riskText5'];
+var riskHeaders = ['riskT1', 'riskT2', 'riskT3', 'riskT4', 'riskT5', 'riskText1', 'riskText2', 'riskText3', 'riskText4', 'riskText5'];
 
-var commitHeaders = ['id', 'commitT1', 'commitT2', 'commitT3', 'commitT4', 'commitT5', 'commitText1', 'commitText2', 'commitText3', 'commitText4', 'commitText5'];
+var commitHeaders = ['commitT1', 'commitT2', 'commitT3', 'commitT4', 'commitT5', 'commitText1', 'commitText2', 'commitText3', 'commitText4', 'commitText5'];
 
 function csvFormat(data) {
   return storyHeaders.reduce((acc, header, index) => {           // change
@@ -37,7 +37,7 @@ function csvFormat(data) {
 
 
 // WriteStream
-let writeStream = fs.createWriteStream('../storyCass.csv')                 // change
+let writeStream = fs.createWriteStream('../siba.csv')                 // change
   .on('finsh', () => console.log('Finished'))
   .on('error', (err) => { console.log('error occured:', err)});
 
