@@ -45,7 +45,7 @@ let writeStream = fs.createWriteStream('../storyCass.csv')                 // ch
 let startTime = Date.now();
 
 var item = 0;
-var itemsLeft = 10000000; // 10000000
+var itemsLeft = 4; // 10000000
 
 function writeToCSV() {
   let keepWriting = true;
