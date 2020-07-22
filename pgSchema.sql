@@ -5,8 +5,6 @@
 -- Drop Tables first
 
 DROP TABLE IF EXISTS Story;
-DROP TABLE IF EXISTS RisksAndChallenges;
-DROP TABLE IF EXISTS Commitments;
 
 CREATE TABLE Story(
   id SERIAL PRIMARY KEY,
@@ -27,6 +25,10 @@ CREATE TABLE Story(
   storyText4 character varying(500) NOT NULL,
   storyText5 character varying(500) NOT NULL
 );
+
+
+DROP TABLE IF EXISTS RisksAndChallenges;
+DROP TABLE IF EXISTS Commitments;
 
 CREATE TABLE RisksAndChallenges(
   id SERIAL PRIMARY KEY,
