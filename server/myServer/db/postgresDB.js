@@ -1,9 +1,9 @@
 const { Pool, Client } = require('pg');
 
 const dbCreds = require('../../../postgres.json');
-const connectionString = `postgressql://${dbCreds.username}:${dbCreds.pwd}@localhost:${dbCreds.port}/sdc`;
+// const connectionString = `postgressql://${dbCreds.username}:${dbCreds.pwd}@localhost:${dbCreds.port}/sdc`;
 
-const pool = new Pool({ connectionString });
+const pool = new Pool(dbCreds);
 
 
 module.exports = pool;
