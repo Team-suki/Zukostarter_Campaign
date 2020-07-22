@@ -18,10 +18,13 @@ app.use(cors());
 app.use(express.static(__dirname + '/../client/dist'));
 
 
-app.get('/:id', (req, res) => {
+app.get('/loaderio-03c874761d7ba1cbe5d8f335cf5acd2e.txt', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
 });
 
+app.get('/:id', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/dist', 'index.html'));
+});
 
 // GET ID Specified Story
 app.get('/api/Story/:id', async function(req, res){
