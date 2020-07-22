@@ -16,18 +16,10 @@ var commitHeaders = ['commitT1', 'commitT2', 'commitT3', 'commitT4', 'commitT5',
 
 function csvFormat(data) {
   return storyHeaders.reduce((acc, header, index) => {           // change
-    if (item === 0) {
-      if (index === storyHeaders.length - 1) {
-        acc += header;
-      } else {
-        acc += header + ',';
-      }
+    if (index === storyHeaders.length - 1) {
+      acc += data[header];
     } else {
-      if (index === storyHeaders.length - 1) {
-        acc += data[header];
-      } else {
-        acc += data[header] + ',';
-      }
+      acc += data[header] + ',';
     }
 
     return acc;
@@ -37,7 +29,7 @@ function csvFormat(data) {
 
 
 // WriteStream
-let writeStream = fs.createWriteStream('../siba.csv')                 // change
+let writeStream = fs.createWriteStream('../../bee.csv')                 // change
   .on('finsh', () => console.log('Finished'))
   .on('error', (err) => { console.log('error occured:', err)});
 
@@ -45,14 +37,14 @@ let writeStream = fs.createWriteStream('../siba.csv')                 // change
 let startTime = Date.now();
 
 var item = 0;
-var itemsLeft = 4; // 10000000
+var itemsLeft = 333; // 10000000
 
 function writeToCSV() {
   let keepWriting = true;
 
   // while item is less than itemsLeft and writeStream.write(data, 'utf8')
   while (keepWriting && item <= itemsLeft) {
-    keepWriting = writeStream.write(csvFormat(machine.generateStoryData(item)) + '\n', 'utf8');      // change
+    keepWriting = writeStream.write(csvFormat(machine.generateStoryData()) + '\n', 'utf8');      // change
     item++;
   } // generateRiskData generateCommitData
 

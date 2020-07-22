@@ -113,7 +113,7 @@ class Campaign extends React.Component {
 
   fetchRisksAndChallenges(){
     let idx = this.getParams()
-    if (idx === "/") idx = 2;
+    if (idx === "") idx = 2; // fix this!
     axios({
       method: 'get',
       url: '/api/RisksAndChallenges/'+idx,
@@ -130,7 +130,7 @@ class Campaign extends React.Component {
 
   fetchEnvironmentalChallenges(){
     let idx = this.getParams()
-    if (idx === "/") idx = 2;
+    if (idx === "") idx = 2;
     axios({
       method: 'get',
       url: '/api/EnvironmentalCommitments/'+idx,
