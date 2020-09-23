@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to kickstarter-updates-service 👋</h1>
+<h1 align="center">Welcome to WonderFund Campaign Service 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <img src="https://img.shields.io/badge/npm-%3E%3D6.14.5-blue.svg" />
@@ -13,10 +13,9 @@
 
 > This module is one of 4 services for a crowdfunding website's Campaign page. This module specifically handles the Campaign Section.
 
-![Project](https://imgur.com/Yd3nyeV.jpg)
-![Review](https://imgur.com/M53HGrB.jpg)
+![Project](https://i.imgur.com/iTM1P0W.jpg)
 
-![GIF](https://media.giphy.com/media/htvWrldVLRggkP0P9W/giphy.gif)
+
 
 > A crowdfunding web application with inherited frontend codebase
 
