@@ -11,7 +11,7 @@
   </a>
 </p>
 
-> This module is one of 4 services for a crowdfunding website's Campaign page. This module specifically handles the Updates & Comment Sections.
+> This module is one of 4 services for a crowdfunding website's Campaign page. This module specifically handles the Campaign Section.
 
 ![Project](https://imgur.com/Yd3nyeV.jpg)
 ![Review](https://imgur.com/M53HGrB.jpg)
