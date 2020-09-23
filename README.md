@@ -13,8 +13,13 @@
 
 > This module is one of 4 services for a crowdfunding website's Campaign page. This module specifically handles the Campaign Section.
 
+> Front Page
+
 ![Project](https://i.imgur.com/iTM1P0W.jpg)
 
+> Demo
+
+![GIF](https://media.giphy.com/media/VtiuFkvnsoBrzpbimw/giphy.gif)
 
 
 > A crowdfunding web application with inherited frontend codebase
